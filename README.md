@@ -94,7 +94,7 @@ function line_marker:api/execute
 
 ### 補足
 
-実行者を書き換えずに実行するため実行functionに@sなどを入れるとAPIの実行者が実行する
+実行者を書き換えずに実行するため実行functionに@sなどを入れるとAPIの実行者が実行する  
 `sample:end`
 
 ```mcfunction
