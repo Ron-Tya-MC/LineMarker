@@ -7,7 +7,7 @@
 
 ## 動作確認バージョン
 
-- 1.19
+- 1.19~
 
 ## ダウンロード
 
@@ -24,7 +24,7 @@
 ```mcfunction
 # 自身を始点、最寄りのゾンビを終点にする
     tag @s add LM.Line_start
-    tag @e[type=zombie,limit=1,sort=nearest] add LM.Line_end_
+    tag @e[type=zombie,limit=1,sort=nearest] add LM.Line_end
 ```
 
 ### 引数を指定する
@@ -36,7 +36,7 @@ storageに値を入れることで線の位置や長さを変更できます
 |:---|:---|:---:|:---|
 | Argument.ID | Any | - | どの型を入れてもok。実行コマンドでの判別用。 |
 | Argument.Range | float | 40.0f | 射程。0以下に設定すると初期値になる。 |
-| Argument.Interval | float | 0.25f | 何ブロックごとにコマンドを実行するかの引数。|
+| Argument.Interval | float | 0.25f | 何ブロックごとにコマンドを実行するかの引数。0以下に設定すると初期値になる。|
 | Argument.StartYOffset | float | 0.0f | 開始するときのY座標上のオフセット。 |
 | Argument.StartSideOffset | float | 0.0f | 開始するときの視点を基準とした横方向のオフセット。 |
 | Argument.StartForwardOffset | float | 0.0f | 開始するときの視点を基準とした前後方向のオフセット。 |
@@ -59,14 +59,14 @@ storageに値を入れることで線の位置や長さを変更できます
 ### 実行
 
 ```mcfunction
-    function line_marker:api/execute
+function line_marker:api/execute
 ```
 
 ### 各地点でのfunction実行
 
 #### 一区間ごとに実行するfunction
 
-`data/line_marker/tag/functions/repeat.json`内に任意のfunctionのパスを記入すればラインの一区間ごとに実行される
+`data/line_marker/tag/functions/repeat.json`内に任意のfunctionのパスを記入すればラインの一区間ごとに実行される  
 デフォルトだと`sample:repeat`が入っている
 
 ```json
@@ -80,7 +80,7 @@ storageに値を入れることで線の位置や長さを変更できます
 
 #### 終点で実行するfunction
 
-`data/line_marker/tag/functions/end.json`内に任意のfunctionのパスを記入すればラインの終点で実行される
+`data/line_marker/tag/functions/end.json`内に任意のfunctionのパスを記入すればラインの終点で実行される  
 デフォルトだと`sample:end`が入っている
 
 ```json
