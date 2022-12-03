@@ -11,7 +11,7 @@
 
 ## ダウンロード
 
-[こちら](https://github.com/Ron_Tya_MC/LineMarker/releases)からダウンロードできます
+[こちら](https://github.com/Ron-Tya-MC/LineMarker/releases)からダウンロードできます
 
 ## 使い方
 
