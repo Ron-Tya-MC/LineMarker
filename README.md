@@ -17,7 +17,7 @@
 
 ### 始点、終点を設定する
 
-始点に"LM.Line_start"、終点に"LM.Line_end"タグをつけます
+始点に`LM.Line_start`、終点に`LM.Line_end`タグをつける
 
 例:
 
@@ -29,19 +29,19 @@
 
 ### 引数を指定する
 
-storageに値を入れることで線の位置や長さを変更できます
-未記入部分は初期値が代入されます
+storageに値を入れることで線の位置や長さを変更できる  
+未記入部分は初期値が代入される
 
 | 引数名 | 型 | 初期値 | 説明 |
 |:---|:---|:---:|:---|
-| Argument.ID | Any | - | どの型を入れてもok。実行コマンドでの判別用。 |
-| Argument.Range | float | 40.0f | 射程。0以下に設定すると初期値になる。 |
-| Argument.Interval | float | 0.25f | 何ブロックごとにコマンドを実行するかの引数。0以下に設定すると初期値になる。|
-| Argument.StartYOffset | float | 0.0f | 開始するときのY座標上のオフセット。 |
-| Argument.StartSideOffset | float | 0.0f | 開始するときの視点を基準とした横方向のオフセット。 |
-| Argument.StartForwardOffset | float | 0.0f | 開始するときの視点を基準とした前後方向のオフセット。 |
-| Argument.TargetYOffset | float | 0.0f | 終点のY座標上のオフセット。 |
-| Argument.EnableOutOfRange | bool | true | 射程が足りないとき実行するか否か。 |
+| Argument.ID | Any | - | どの型を入れてもok, 実行コマンドでの判別用 |
+| Argument.Range | float | 40.0f | 射程, 0以下に設定すると初期値になる |
+| Argument.Interval | float | 0.25f | 何ブロックごとにコマンドを実行するかの引数, 0以下に設定すると初期値になる |
+| Argument.StartYOffset | float | 0.0f | 開始するときのY座標上のオフセット |
+| Argument.StartSideOffset | float | 0.0f | 開始するときの視点を基準とした横方向のオフセット |
+| Argument.StartForwardOffset | float | 0.0f | 開始するときの視点を基準とした前後方向のオフセット |
+| Argument.TargetYOffset | float | 0.0f | 終点のY座標上のオフセット |
+| Argument.EnableOutOfRange | bool | true | 射程が足りないとき実行するか否か |
 
 例:
 
@@ -66,7 +66,7 @@ function line_marker:api/execute
 
 #### 一区間ごとに実行するfunction
 
-`data/line_marker/tag/functions/repeat.json`内に任意のfunctionのパスを記入すればラインの一区間ごとに実行される  
+`data/line_marker/tags/functions/repeat.json`内に任意のfunctionのパスを記入すればラインの一区間ごとに実行される  
 デフォルトだと`sample:repeat`が入っている
 
 ```json
@@ -80,7 +80,7 @@ function line_marker:api/execute
 
 #### 終点で実行するfunction
 
-`data/line_marker/tag/functions/end.json`内に任意のfunctionのパスを記入すればラインの終点で実行される  
+`data/line_marker/tags/functions/end.json`内に任意のfunctionのパスを記入すればラインの終点で実行される  
 デフォルトだと`sample:end`が入っている
 
 ```json
@@ -105,7 +105,8 @@ effect give @s glowing 1 1 true
 
 ## 注意
 
-- Argument.Intervalを小さくしすぎると最大コマンド数を超える恐れあり。
+- Argument.Intervalを小さくしすぎると最大コマンド数を超える恐れあり  
+- 始点、終点を複数指定するとランダムで一つずつ選ばれ、他は解除される
 
 ## ライセンス
 
