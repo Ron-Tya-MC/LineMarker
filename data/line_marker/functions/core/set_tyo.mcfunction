@@ -2,7 +2,7 @@
 #
 # SYOを設定する
 #
-# @within function line_marker:api/execute
+# @within function line_marker:core/**
 
 # アマスタ召喚
     summon armor_stand ~ ~ ~ {Tags:["LM.Line_core_end"],Invisible:1b,Marker:1b}

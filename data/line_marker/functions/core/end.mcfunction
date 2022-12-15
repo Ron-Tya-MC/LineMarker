@@ -2,7 +2,7 @@
 #
 # 終端で実行する
 #
-# @within function line_marker:api/execute
+# @within function line_marker:core/**
 
 # スコアリセット
     scoreboard players reset $repeattemp LM.Core

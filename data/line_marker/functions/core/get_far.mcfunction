@@ -2,7 +2,7 @@
 #
 # 二分探索でどうにかして距離を引っ張り出す
 #
-# @within function line_marker:api/execute
+# @within function line_marker:core/**
 
 # 一次的なスコアセット
     scoreboard players set $measure LM.Core 0

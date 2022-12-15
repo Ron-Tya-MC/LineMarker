@@ -2,7 +2,7 @@
 #
 # Rangeと距離を比較する
 #
-# @within function line_marker:api/execute
+# @within function line_marker:core/**
 
 # 比較
     execute store result score $range LM.Core run data get storage line_marker: Argument.Range 100

@@ -2,7 +2,7 @@
 #
 # スコア分前進させる
 #
-# @within function line_marker:api/execute
+# @within function line_marker:core/**
 
 # tempスコア
     scoreboard players operation $repeattemp LM.Core = $interval LM.Core

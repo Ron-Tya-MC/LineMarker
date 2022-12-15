@@ -2,7 +2,7 @@
 #
 # 反復で実行する
 #
-# @within function line_marker:api/execute
+# @within function line_marker:core/**
 
 # スコア減算
     scoreboard players remove $maxcount LM.Core 1
