@@ -108,6 +108,10 @@ effect give @s glowing 1 1 true
 - Argument.Intervalを小さくしすぎると最大コマンド数を超える恐れあり  
 - 始点、終点を複数指定するとランダムで一つずつ選ばれ、他は解除される
 
+## 連絡
+
+[@Ron_Tya_MC](https://twitter.com/Ron_Tya_MC)のDMまで
+
 ## ライセンス
 
 [CC0-1.0](LICENSE)
