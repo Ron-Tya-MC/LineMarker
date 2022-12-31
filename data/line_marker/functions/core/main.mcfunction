@@ -58,5 +58,6 @@
 
 # 反復実行
     execute unless score $failed LM.Core matches 1 at @e[tag=LM.Line_core_start] run summon armor_stand ~ ~ ~ {Tags:["LM.Line_core"],Invisible:1b,Marker:1b}
+    execute unless score $failed LM.Core matches 1 at @e[tag=LM.Line_core] run scoreboard players set $index LM.Core 0
     execute unless score $failed LM.Core matches 1 at @e[tag=LM.Line_core] run function line_marker:core/repeat
     execute if score $failed LM.Core matches 1 run function line_marker:core/failed
