@@ -110,7 +110,7 @@ effect give @s glowing 1 1 true
 
 ## 連絡
 
-[@Ron_Tya_MC](https://twitter.com/Ron_Tya_MC)のDMまで
+[@Ron_Tya_MC](https://twitter.com/Ron_Tya_MC)まで
 
 ## ライセンス
 
