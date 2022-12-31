@@ -103,6 +103,10 @@ effect give @s glowing 1 1 true
 
 この場合`line_marker:api/execute`を実行したエンティティに発光が付与される
 
+>$index LM.Core
+
+一回のrepeat実行につき$index LM.Coreスコアが一増える
+
 ## 注意
 
 - Argument.Intervalを小さくしすぎると最大コマンド数を超える恐れあり  
