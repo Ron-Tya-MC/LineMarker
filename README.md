@@ -29,8 +29,8 @@
 
 ### 引数を指定する
 
-storageに値を入れることで線の位置や長さを変更できる  
-未記入部分は初期値が代入される
+storageに値を入れることで線の位置や長さを変更できます  
+未記入部分は初期値が代入されます
 
 | 引数名 | 型 | 初期値 | 説明 |
 |:---|:---|:---:|:---|
@@ -66,8 +66,8 @@ function line_marker:api/execute
 
 #### 一区間ごとに実行するfunction
 
-`data/line_marker/tags/functions/repeat.json`内に任意のfunctionのパスを記入すればラインの一区間ごとに実行される  
-デフォルトだと`sample:repeat`が入っている
+`data/line_marker/tags/functions/repeat.json`内に任意のfunctionのパスを記入すればラインの一区間ごとに実行されます  
+デフォルトだと`sample:repeat`
 
 ```json
 {
@@ -80,8 +80,8 @@ function line_marker:api/execute
 
 #### 終点で実行するfunction
 
-`data/line_marker/tags/functions/end.json`内に任意のfunctionのパスを記入すればラインの終点で実行される  
-デフォルトだと`sample:end`が入っている
+`data/line_marker/tags/functions/end.json`内に任意のfunctionのパスを記入すればラインの終点で実行されます  
+デフォルトだと`sample:end`
 
 ```json
 {
@@ -105,7 +105,7 @@ effect give @s glowing 1 1 true
 
 >$index LM.Core
 
-一回のrepeat実行につき$index LM.Coreスコアが一増える
+一回のrepeat実行につき$index LM.Coreスコアが一増えます
 
 ## 注意
 
