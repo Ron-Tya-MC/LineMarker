@@ -42,6 +42,12 @@ storageに値を入れることで線の位置や長さを変更できます
 | Argument.StartForwardOffset | float | 0.0f | 開始するときの視点を基準とした前後方向のオフセット |
 | Argument.TargetYOffset | float | 0.0f | 終点のY座標上のオフセット |
 | Argument.EnableOutOfRange | bool | true | 射程が足りないとき実行するか否か |
+| Argument.StopAtBlock | bool | true | 実行場所が当たり判定のあるブロックの時そこで処理を中断するか否か |
+| Argument.StopAtBetterCollision | bool | true | ブロックに埋まっている判定をBetterCollisionで行うようになるか否か |
+| Argument.RepeatFunctionAtBlock | bool | true | 中断される場所でも#repeat.json内のfunctionが実行されるか否か |
+| Argument.EndFunctionAtBlock | bool | true | 中断された場所でも#end.json内のfunctionが実行されるか否か |
+
+※StopAtBetterCollisionの使用にはBetterCollisionのversion1.5以上が必要です
 
 例:
 

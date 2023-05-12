@@ -41,10 +41,13 @@
     execute if score $repeattemp LM.Core matches 1.. run scoreboard players remove $repeattemp LM.Core 1
 
 # 実行
-    execute at @e[tag=LM.Line_anchor,limit=1,sort=nearest] run function #line_marker:repeat
+    execute at @e[tag=LM.Line_anchor,limit=1,sort=nearest] unless score $stoprepeat LM.Core matches 1 run function #line_marker:repeat
 
 # スコアが0でないなら続ける
-    execute if score $maxcount LM.Core matches 1.. run function line_marker:core/repeat
+    execute unless score $blocked LM.Core matches 1 if score $maxcount LM.Core matches 1.. run function line_marker:core/repeat
 
 # スコアが0なら終わり
-    execute if score $maxcount LM.Core matches ..0 at @e[tag=LM.Line_anchor,limit=1,sort=nearest] run function line_marker:core/end
+    execute unless score $blocked LM.Core matches 1 if score $maxcount LM.Core matches ..0 at @e[tag=LM.Line_anchor,limit=1,sort=nearest] run function line_marker:core/end
+
+# ブロックに当たったら終わり
+    execute if score $blocked LM.Core matches 1 at @e[tag=LM.Line_anchor,limit=1,sort=nearest] run function line_marker:core/end

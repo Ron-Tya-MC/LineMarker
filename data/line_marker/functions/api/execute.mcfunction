@@ -19,6 +19,14 @@
 #       終点のY座標上のオフセット。
 #   Argument.EnableOutOfRange: boolean
 #       射程が足りないとき実行するか否か。
+#   Argument.StopAtBlock: boolean
+#       実行場所が当たり判定のあるブロックの時そこで処理を中断するか否か。
+#   Argument.StopAtBetterCollision: boolean
+#       StopAtBlockが1bの時にこれを1bにするとブロックに埋まっている判定をBetterCollisionで行うようになる。BetterCollisionの導入が必須。
+#   Argument.RepeatFunctionAtBlock: boolean
+#       StopAtBlockが1bの時にこれを1bにするとStopAtBlockで中断される場所でも#repeat.json内のfunctionが実行される。初期値は1b。
+#   Argument.EndFunctionAtBlock: boolean
+#       StopAtBlockが1bの時にこれを1bにするとStopAtBlockで中断された場合も#end.json内のfunctionが実行される。初期値は1b。
 # @api
 
 # 始点終点チェック
@@ -26,7 +34,9 @@
     execute unless entity @e[tag=LM.Line_end] run tellraw @a [{"text":"[","color":"white"},{"text":"LineMarker","color":"green"},{"text":"] ","color":"white"},{"text":"ERROR >>","color":"red"},{"text":"終点の指定がされていないようです","color":"white"}]
 
 # スコアチェック
-    execute unless score $installed LM.Core matches 1 run tellraw @a [{"text":"[","color":"white"},{"text":"LineMarker","color":"green"},{"text":"] ","color":"white"},{"text":"ERROR >>","color":"red"},{"text":"linemarker:core/load関数が実行されていないようです","color":"white"}]
+    execute store success storage line_marker: temp.success int 1 if score $installed LM.Core matches 1
+    execute unless data storage line_marker: temp{success:1} run tellraw @a [{"text":"[","color":"white"},{"text":"LineMarker","color":"green"},{"text":"] ","color":"white"},{"text":"ERROR >>","color":"red"},{"text":"linemarker:core/load関数が実行されていないようです","color":"white"}]
+    data remove storage line_marker: temp
 
 # 引数チェック
     execute unless data storage line_marker: Argument.Range run data modify storage line_marker: Argument.Range set value 40.0f
@@ -41,6 +51,8 @@
     execute if data storage line_marker: Argument{StartForwardOffset:0.0f} run data remove storage line_marker: Argument.StartForwardOffset
     execute if data storage line_marker: Argument{TargetYOffset:0.0f} run data remove storage line_marker: Argument.TargetYOffset
     execute unless data storage line_marker: Argument.EnableOutOfRange run data modify storage line_marker: Argument.EnableOutOfRange set value 1b
+    execute unless data storage line_marker: Argument.RepeatFunctionAtBlock run data modify storage line_marker: Argument.RepeatFunctionAtBlock set value 1b
+    execute unless data storage line_marker: Argument.EndFunctionAtBlock run data modify storage line_marker: Argument.EndFunctionAtBlock set value 1b
 
 # リセット
     scoreboard players reset $range LM.Core
